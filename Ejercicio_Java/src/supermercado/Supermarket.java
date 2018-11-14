@@ -16,27 +16,29 @@ public class Supermarket {
 		productlist.add(new Products("Frutillas", null ,64, "kilo"));
 	}
 	
-	public ArrayList<Products> getProductlist() {
-		return productlist;
+	public void getProductlist() {
+		for (int i = 0; i < productlist.size(); i++) {
+			System.out.println(productlist.get(i).toString());
+		}
 	}
 	
-	public String maxProduct() {
+	public void maxProduct() {
 		Products max = productlist.get(0);
 		for (int i = 1; i < productlist.size(); i++) {
 			if(productlist.get(i).compareTo(max) > 0) {
 				max = productlist.get(i);
 			}			
 		}
-		return "Producto más caro: " + max.getName();
+		System.out.println("Producto más caro: " + max.getName());
 	}
 	
-	public String minProduct() {
+	public void minProduct() {
 		Products min = productlist.get(0);
 		for (int i = 0; i < productlist.size(); i++) {
 			if(productlist.get(i).compareTo(min) < 0) {
 				min = productlist.get(i);
 			}			
 		}
-		return "Producto más barato: " + min.getName();
+		System.out.println("Producto más barato: " + min.getName());
 	}
 }
